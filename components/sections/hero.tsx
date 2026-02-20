@@ -145,7 +145,7 @@ export const Hero = () => {
                             style={{ borderColor: "var(--border)" }}
                         >
                             {[
-                                { value: 5, suffix: "+", label: "Years Building" },
+                                { value: 5, suffix: "+", label: "Years Building " },
                                 { value: 13, suffix: "+", label: "Live Projects" },
                                 { value: 50, suffix: "+", label: "Certifications" },
                             ].map((s, i) => (
