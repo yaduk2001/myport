@@ -1,0 +1,237 @@
+[
+    {
+        "id": "spaark",
+        "name": "Spaark — Tier-Based NFT & Crypto Engagement Ecosystem",
+        "category": "web",
+        "description": "A gamified Web3 platform where users mint NFTs, earn Spark tokens through daily mining, and grow the community via a 6-level referral network with VIP membership tiers (Bronze, Silver, Gold).",
+        "longDescription": "Spaark is a gamified NFT & crypto engagement ecosystem designed to incentivize platform participation through structured referral networks, digital asset ownership, and daily mining mechanics.\n\nCore Features:\n• Tiered Membership System — Bronze, Silver, Gold tiers driven by NFT ownership\n• 6-Level Referral Network — recursive propagation rewards ancestor nodes activity credit\n• Achievement milestones that unlock platform recognition\n• Daily Mining Mechanics — users activate mining to earn Spark tokens, rate-limited by lastMineTime\n• Real-time Dashboard — live wallet balance, Spark points, VIP tier, referral metrics, and activity logs\n\nAuthentication:\n• Email, Phone, Username registration with bcrypt + JWT\n• Google & Twitter OAuth integration\n\nArchitecture:\n• Frontend: Next.js 16 (App Router) + React 19, Tailwind CSS 4, Framer Motion, canvas-confetti\n• Backend: Express.js 5 + MongoDB (Mongoose)\n• JWT auth via Authorization headers, centralized API utility (lib/api.ts)\n• AuthContext for session persistence\n• MVC backend with recursive referral propagation and helper-based VIP tier calculation\n\nSecurity:\n• bcrypt password hashing, JWT route protection, duplicate account prevention, MongoDB indexing",
+        "techStack": [
+            "Next.js 16",
+            "React 19",
+            "Tailwind CSS",
+            "Framer Motion",
+            "Node.js",
+            "Express 5",
+            "MongoDB",
+            "JWT",
+            "OAuth"
+        ],
+        "monthsWorked": "2024 - 2025",
+        "featured": true
+    },
+    {
+        "id": "supe-ai-website",
+        "name": "Supe AI — Enterprise AI & Blockchain Company Website",
+        "category": "web",
+        "description": "The live company website for Supe AI — a high-end enterprise platform showcasing AI & Web3 solutions, featuring an AI chat assistant (Gemini 2.5), a job application portal, admin dashboard, and multilingual support.",
+        "longDescription": "Supe AI is the official website for a live enterprise technology company delivering AI and Blockchain solutions. The platform serves as both a service showcase and an interactive engagement portal.\n\nKey Features Built:\n• AI Chat Assistant — Context-aware, multilingual (auto-detects language), restricted to Supe AI business context, powered by Google Gemini 2.5 Flash\n• Careers Portal — Searchable job listings with modal-based quick applications (Name, LinkedIn, GitHub, skills)\n• Interactive Contact Grid — Tilt-card office locations with click-to-call & click-to-email\n• Admin Dashboard — JWT-secured portal with user management (ban/unban/delete), recruitment management, testimonials (with audio), announcements, and activity monitoring\n• Authentication — Email/password (Firebase Auth) + Admin JWT with HTTP-only cookies\n\nUI Highlights:\n• Dynamic hero with typing effects, architecture flow visualization, 3D industry cards\n• Custom TiltCard, MagneticButton, LiveBackground components\n• Services page with video background cards per vertical (Construction, Logistics, Finance)\n\nSecurity:\n• Dual-layer auth (Firebase + Admin JWT), Supabase Row Level Security (RLS), controlled CORS, secure .env storage\n\nTech Stack:\n• Frontend: Next.js 15, React 19, Tailwind CSS, Framer Motion\n• Backend: Node.js + Express\n• AI: Google Gemini 2.5 Flash\n• DB: Firebase Realtime Database + Supabase\n• Services: Nodemailer, Firebase Admin SDK, Google Maps embed",
+        "techStack": [
+            "Next.js 15",
+            "React 19",
+            "Tailwind CSS",
+            "Framer Motion",
+            "Node.js",
+            "Express",
+            "Google Gemini 2.5",
+            "Firebase",
+            "Supabase"
+        ],
+        "monthsWorked": "2024 - 2025",
+        "featured": true
+    },
+    {
+        "id": "vital-lms",
+        "name": "Vital — AI-Powered Learning Management Platform",
+        "category": "ai-ml",
+        "description": "An advanced AI-driven LMS designed to transform digital education through intelligent automation, 3D AI companions, gamified engagement, and a complete learning-to-analytics pipeline for students and teachers.",
+        "longDescription": "Vital is a multi-role education ecosystem platform connecting Students, Teachers, Organizations, Content Creators, and Guests through a unified intelligent interface.\n\nKey Contributions:\n• Built full backend architecture and MongoDB database design\n• Implemented Student & Teacher dashboards end-to-end\n• Created AI integration layer via Google Gemini SDK (Node.js proxy + Python FastAPI microservice)\n• Developed anti-cheating exam system (tab-switch & camera detection)\n• Netflix-style user dashboard with adaptive video streaming\n• Python FastAPI microservice for PDF parsing, RAG-based tutoring, and TTS for AI Study Buddy\n\nStudent Features:\n• 3D AI Study Buddy with voice assistance\n• Context-aware AI help from lesson materials\n• Secure exam interface with timer & anti-cheating monitoring\n• Leaderboards, academic points, classroom chat\n\nTeacher Features:\n• AI-powered instant exam generation from topics\n• Auto-grading, student engagement metrics, watch time analytics\n• Visual performance reports sent to parents\n\nAI Architecture:\n• Google Gemini 2.5 Flash for exam generation & tutoring\n• Python FastAPI microservice: PDF parsing → structured lessons → RAG tutoring → TTS speech",
+        "techStack": [
+            "React 18",
+            "TypeScript",
+            "Vite",
+            "Tailwind CSS",
+            "Three.js",
+            "Framer Motion",
+            "Node.js",
+            "Express",
+            "MongoDB",
+            "Google Gemini 2.5",
+            "Python",
+            "FastAPI"
+        ],
+        "monthsWorked": "2024 - 2025",
+        "featured": true
+    },
+    {
+        "id": "eventra-web",
+        "name": "Eventra — Event Services Marketplace",
+        "category": "web",
+        "description": "A multi-sided event services marketplace connecting customers with event professionals, caterers, photographers, and transport providers — with a built-in bidding system, gig job board, and real-time communication.",
+        "longDescription": "Eventra is a full-scale Upwork-style marketplace built for the events industry, enabling service discovery, booking, bidding, and real-time coordination.\n\nCore Platform Features:\n• Service discovery & direct booking for event companies, caterers, photographers, and transport providers\n• RFQ bidding system: customers post needs, providers submit proposals\n• Freelancer & job board for gig event staffing\n• Real-time text chat with Socket.io, WebRTC-ready for voice/video calling\n• Provider portfolios with testimonials and endorsements\n• Admin approval workflow & provider verification system\n\nArchitecture:\n• Frontend: Next.js 15 App Router\n• Backend: Node.js + Express with Firebase Admin SDK\n• Database: Firebase Firestore / Realtime Database\n• Auth: Firebase Authentication with JWT middleware\n• Real-time: Socket.io for chat, notifications, and WebRTC signaling\n\nSecurity:\n• Firebase token verification, Helmet headers, rate limiting (2000 req/15min), Joi & express-validator input validation",
+        "techStack": [
+            "Next.js 15",
+            "Tailwind CSS",
+            "Framer Motion",
+            "Three.js",
+            "Node.js",
+            "Express",
+            "Firebase",
+            "Socket.io",
+            "WebRTC",
+            "Lottie"
+        ],
+        "monthsWorked": "2024 - 2025",
+        "featured": true
+    },
+    {
+        "id": "evantra-app",
+        "name": "Evantra — Mobile Event Marketplace (Flutter)",
+        "category": "web",
+        "description": "Mobile-first Flutter application extending the Eventra platform — enabling event service discovery, booking, freelancer coordination, and real-time communication on iOS and Android.",
+        "longDescription": "Evantra is the mobile counterpart to the Eventra web platform, built with Flutter for cross-platform delivery (iOS & Android).\n\nCore Features:\n• Service marketplace for event professionals — book caterers, photographers, transport, and event companies\n• Direct booking and RFQ bid request workflow\n• Freelancer and job marketplace for event staffing\n• Real-time chat, voice, and video communication\n• Push notifications and live booking management\n• Provider portfolios, testimonials, and verification features\n\nTechnology:\n• Flutter (cross-platform mobile)\n• Node.js + Express backend (rebuilt for improved stability and performance)\n• Socket.io for real-time features\n• Firebase Firestore / Realtime Database (primary) + MySQL (secondary)\n• Firebase Authentication with secure token verification\n\nNote: The backend was fully rebuilt from scratch to resolve technical limitations, delivering improved stability and maintainability while preserving feature parity with the web platform.",
+        "techStack": [
+            "Flutter",
+            "Dart",
+            "Node.js",
+            "Express",
+            "Firebase",
+            "Socket.io",
+            "MySQL"
+        ],
+        "monthsWorked": "2024 - 2025",
+        "featured": true
+    },
+    {
+        "id": "h-holding",
+        "name": "H Holding Enterprises — Unified Business Command Center",
+        "category": "web",
+        "description": "A centralized digital platform unifying real estate management, commodities trading intelligence, and infrastructure project portfolios under a single brand ecosystem — built with Next.js, Node.js, and Redis caching.",
+        "longDescription": "H Holding Enterprises is a multi-vertical business platform integrating real estate, precious metals market intelligence, and infrastructure project management into one cohesive digital product.\n\nImplemented Modules:\n\n🏘 Real Estate Management\n• Property listings with advanced search & geo-location filtering\n• Price range and specification-based filtering\n• Complete MongoDB data model with controller APIs\n\n📈 Market Rates Intelligence\n• Live precious metal rates (Gold, Silver) via external API\n• Redis caching (Upstash) for performance optimization and cost reduction\n• Serverless Next.js API routes for lightweight integration\n\n🔐 Authentication & Access Control\n• JWT-based authentication with bcrypt password hashing\n• Role-based access control (Admin / Customer)\n• Helmet security headers & rate limiting\n\n📊 Commodities & Projects Showcase\n• Infrastructure portfolio showcase (UI complete)\n• AI Chat Assistant (UI ready, backend integration in progress)\n• Live market ticker (real-time simulation active)\n\nArchitecture: Hybrid Monolith + Serverless\n• Frontend: Next.js + TypeScript (Vercel-optimized)\n• Backend: Node.js + Express\n• Database: MongoDB Atlas\n• Cache: Redis (Upstash)\n• Media: Cloudinary",
+        "techStack": [
+            "Next.js",
+            "TypeScript",
+            "Node.js",
+            "Express",
+            "MongoDB",
+            "Redis",
+            "Cloudinary",
+            "Framer Motion"
+        ],
+        "monthsWorked": "2024 - 2025",
+        "featured": true
+    },
+    {
+        "id": "church-platform",
+        "name": "Church Digital Management System & Web Portal",
+        "category": "web",
+        "description": "A comprehensive parish ERP system and public web portal — digitizing church operations including family registry, live streaming, blood bank automation, prayer requests, mass timings, and a full admin command center.",
+        "longDescription": "A specialized Digital Management System for a parish community, replacing manual record-keeping with a fully digital, real-time, and multilingual platform.\n\nDevelopment Contributions:\n• Designed and integrated the complete frontend-to-backend architecture\n• Implemented admin dashboard with full CRUD for parish family registry\n• Built live streaming controls with RTMP via Node Media Server\n• Integrated Google Translate API for English ↔ Malayalam support\n• Blood bank automation: auto-generates donor lists from parish census\n• Prayer request and thanksgiving digital workflows\n• Media handling with Cloudinary and multer file uploads\n• JWT authentication with role-based access (super_admin / admin)\n• Migrated and designed the MongoDB database architecture\n\nPublic Portal Features:\n• Hero slider, mass timetables, live streaming (/watch-live with HLS/FLV player)\n• Gallery, parish news, event archives, blood bank lookup\n\nAdmin Panel (/admin/dashboard):\n• Family registry management (auto-calculates age from DOB, tracks sacraments)\n• Content management: sliders, news, bulletins, gallery\n• Streaming controls, prayer request approvals, system settings\n\nTech Stack:\n• Frontend: Next.js 16 + TypeScript + Tailwind CSS 4\n• Backend: Node.js + Express (TypeScript) + Node Media Server\n• Database: MongoDB + Mongoose\n• Real-time: Socket.io-client\n• External: Google Translate API, YouTube/Facebook streaming embeds, Cloudinary",
+        "techStack": [
+            "Next.js 16",
+            "TypeScript",
+            "Tailwind CSS",
+            "Node.js",
+            "Express",
+            "MongoDB",
+            "Socket.io",
+            "Cloudinary",
+            "Google APIs"
+        ],
+        "monthsWorked": "2024 - 2025",
+        "featured": true
+    },
+    {
+        "id": "eduspark",
+        "name": "EduSpark – AI Powered Teaching Assistant",
+        "category": "ai-ml",
+        "description": "EduSpark is a smart educational platform designed to bridge the gap between students, teachers, parents, and administrators. Built with a strong focus on inclusivity and accessibility, it leverages cutting-edge AI and Machine Learning techniques to personalize learning experiences and streamline academic operations.",
+        "longDescription": "EduSpark is a smart educational platform designed to bridge the gap between students, teachers, parents, and administrators. Built with a strong focus on inclusivity and accessibility, it leverages cutting-edge AI and Machine Learning techniques to personalize learning experiences and streamline academic operations.\n\nKey Features:\n• Student & Admin Modules (Phase-1)\n• Predictive Analytics for academic performance\n• Machine Learning-driven recommendation systems\n• Real-time interaction system using CNN\n• AI-powered Sign Language Interpretation (for accessibility)\n• Smart Certificate Generation & Course Progress Tracking\n• Cloud-deployed services for high-computation tasks\n\nSkills: Artificial Intelligence (AI) • Machine Learning • Flutter • Firebase • Cloud Firestore • Microsoft Azure • Amazon Web Services (AWS)",
+        "techStack": [
+            "AI",
+            "Machine Learning",
+            "Flutter",
+            "Firebase",
+            "Azure",
+            "AWS"
+        ],
+        "monthsWorked": "Oct 2024 - Feb 2025",
+        "featured": true
+    },
+    {
+        "id": "rambutan",
+        "name": "Rambutan Classification using Gemini API & Machine Learning",
+        "category": "ai-ml",
+        "description": "This project presents an intelligent system to verify and classify Rambutan fruits using AI. It combines Gemini API for fruit-type detection and a custom-trained Machine Learning model to classify rambutans into Raw, Ripe, and Defective categories.",
+        "longDescription": "This project presents an intelligent system to verify and classify Rambutan fruits using AI. It combines Gemini API for fruit-type detection and a custom-trained Machine Learning model to classify rambutans into Raw, Ripe, and Defective categories. The system is designed to ensure only fresh (ripe) rambutans are allowed for upload by sellers.\n\nKey Highlights:\n• Gemini API integration to first verify if the uploaded fruit is Rambutan (avoiding wrong entries like lychee or longan)\n• Custom ML model trained to classify images of rambutans into: Raw, Ripe (Only accepted), Defective (Rejected)\n• Uploads are restricted to ripe rambutans only – ensuring quality for buyers\n• Seller-side interface with real-time feedback and image preview\n\nTech Stack:\n• Gemini API – for fruit identification\n• TensorFlow/Keras (CNN) – for rambutan image classification\n• Python – for backend ML processing\n• Firebase / Flask / Django – for platform integration\n• Custom Dataset – collected and labeled for raw, ripe, and defective rambutans\n\nSkills: Python • Django • keras • tensorflow • Machine Learning Algorithms",
+        "techStack": [
+            "Python",
+            "Django",
+            "Keras",
+            "TensorFlow",
+            "Gemini API"
+        ],
+        "monthsWorked": "Nov 2024 - Nov 2024",
+        "featured": true
+    },
+    {
+        "id": "cattle-disease",
+        "name": "Cattle Disease Detection using Machine Learning",
+        "category": "ai-ml",
+        "description": "This project focuses on leveraging Machine Learning and Deep Learning to build a Cattle Disease Detection system, capable of identifying common cattle diseases from images using a fine-tuned MobileNetV2 model.",
+        "longDescription": "This project focuses on leveraging Machine Learning and Deep Learning to build a Cattle Disease Detection system, capable of identifying common cattle diseases from images using a fine-tuned MobileNetV2 model.\n\nKey Highlights:\n• Image-based disease classification using a fine-tuned MobileNetV2\n• Achieved up to 90% accuracy on a curated dataset of cattle disease images\n• Integrated Gemini API to provide real-time disease insights, including: Description of the detected disease, Recommended cures and precautions\n• User-friendly interface for farmers/vets to upload images and get instant results\n\nTech Stack:\n• MobileNetV2 (TensorFlow/Keras) – for lightweight, efficient image classification\n• Python – for model training, preprocessing, and backend logic\n• Gemini API – for dynamically fetching treatment advice\n• Flask/Streamlit (optional) – for UI/UX layer\n• Firebase/Local Storage – for storing user uploads and logs\n\nSkills: Python • Flask • Mobilenetv2 • TensorFlow • Keras • Django",
+        "techStack": [
+            "Python",
+            "TensorFlow",
+            "Keras",
+            "Flask",
+            "Gemini API"
+        ],
+        "monthsWorked": "Nov 2024 - Nov 2024",
+        "featured": true
+    },
+    {
+        "id": "home-automation",
+        "name": "Home Automation using Flutter & Arduino",
+        "category": "web",
+        "description": "As part of my final year BSc project, I developed a smart home automation system that integrates Flutter for the mobile application and Arduino for controlling home appliances.",
+        "longDescription": "As part of my final year BSc (Undergraduate) project, I developed a smart home automation system that integrates Flutter for the mobile application and Arduino for controlling home appliances. The goal was to create a low-cost, efficient, and user-friendly system that allows users to remotely operate and monitor home devices.\n\nProject Highlights:\n• Mobile app developed using Flutter\n• Hardware control via Arduino UNO\n• Appliance control: lights, fans, etc.\n• Real-time Bluetooth/Wi-Fi communication between app and Arduino\n• User-friendly interface for seamless device interaction\n• Potential expansion to voice control and security integration\n\nTech Stack:\n• Flutter (Dart) – For cross-platform mobile development\n• Arduino UNO (C++) – For microcontroller-based hardware control\n• HC-05 Bluetooth / Wi-Fi Modules – For wireless connectivity\n\nSkills: Flutter • Firebase • Arduino • C#",
+        "techStack": [
+            "Flutter",
+            "Firebase",
+            "Arduino",
+            "C#"
+        ],
+        "monthsWorked": "Nov 2023 - Feb 2024",
+        "featured": true
+    },
+    {
+        "id": "movie-ticket",
+        "name": "Movie Ticket Booking System – PHP & MySQL",
+        "category": "web",
+        "description": "As part of my BSc Mini Project, I developed a web-based Movie Ticket Booking System using PHP and MySQL, designed to simplify the process of browsing movies, selecting showtimes, and reserving seats online.",
+        "longDescription": "As part of my BSc Mini Project, I developed a web-based Movie Ticket Booking System using PHP and MySQL, designed to simplify the process of browsing movies, selecting showtimes, and reserving seats online.\n\nProject Features:\n• View movies, showtimes, and theater details\n• Real-time seat selection and booking\n• Secure user login and registration\n• Admin panel to manage movies, shows, and bookings\n• Booking history for users\n• Basic ticket availability dashboard\n\nTech Stack:\n• Frontend: HTML, CSS, JavaScript\n• Backend: PHP\n• Database: MySQL\n• Localhost Deployment: WAMP",
+        "techStack": [
+            "PHP",
+            "MySQL",
+            "HTML/CSS/JS"
+        ],
+        "monthsWorked": "Jul 2023 - Sep 2023",
+        "featured": true
+    },
+    {
+        "id": "business-website",
+        "name": "Official Business Website for a Live Company",
+        "category": "web",
+        "description": "I developed a modern, responsive, and intelligent company website for a functioning business, combining cutting-edge web technologies with AI integration for enhanced user experience and performance.",
+        "longDescription": "I developed a modern, responsive, and intelligent company website for a functioning business, combining cutting-edge web technologies with AI integration for enhanced user experience and performance.\n\nTech Stack & Core Features:\n• Frontend: Crafted using Next.js for a fast, SEO-optimized, and server-side rendered UI. The design is responsive, visually appealing, and aligned with the company's branding standards.\n• AI-Powered Features: Integrated OpenAI's LLM to enable smart content generation, intelligent suggestions, or automated business interactions.\n• Authentication System: Built secure user authentication and session management using JWT + bcrypt, ensuring only authorized users access restricted areas.\n• Backend: Developed using Node.js + Express for a robust and scalable REST API, handling business logic, routing, and secure data exchange with the frontend.\n• Monitoring & Logging: Added Firebeats to monitor live metrics, performance, and error tracking for continuous improvement and debugging.\n• API Integration: Connected with internal/external APIs for seamless data flow, including third-party services when needed.\n\nHighlights:\n• Fully responsive & cross-device compatible\n• Clean codebase with modular architecture\n• Real-time insights and LLM-enhanced interactions\n\nSkills: Node.js • Express.js • Firebase • Large Language Models (LLM) • User Authentication • Version Control • Web Hosting",
+        "techStack": [
+            "Next.js",
+            "Node.js",
+            "Express",
+            "OpenAI LLM",
+            "Firebase"
+        ],
+        "monthsWorked": "Recent",
+        "featured": true
+    }
+]
