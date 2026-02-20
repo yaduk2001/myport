@@ -221,8 +221,8 @@ export const Hero = () => {
 
                                 <div className="grid grid-cols-3 gap-3 p-4 rounded-xl" style={{ background: "var(--bg-muted)" }}>
                                     {[
-                                        { value: 3, suffix: "+", label: "Years" },
-                                        { value: 6, suffix: "+", label: "Projects" },
+                                        { value: 5, suffix: "+", label: "Years" },
+                                        { value: 13, suffix: "+", label: "Projects" },
                                         { value: 50, suffix: "+", label: "Certs" },
                                     ].map((s, i) => (
                                         <div key={i} className="text-center">
