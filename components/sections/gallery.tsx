@@ -140,7 +140,7 @@ export const Gallery = () => {
                         Photo Gallery
                     </h1>
                     <p className="max-w-md mx-auto text-base" style={{ color: "var(--fg-muted)" }}>
-                        Snapshots from hackathons, events, collaborations and the journey so far.
+                        Some Snapshots of Endless Memories So far.
                     </p>
                     <motion.div className="mt-6 inline-flex" whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
                         <Link href="https://www.instagram.com/yadu.krishna.k" target="_blank" rel="noopener noreferrer"
@@ -211,7 +211,7 @@ export const Gallery = () => {
 
                         <motion.p variants={fadeUp} initial="hidden" whileInView="visible" viewport={viewport}
                             className="text-center mt-6 text-sm" style={{ color: "var(--fg-subtle)" }}>
-                            {localItems.length} photos only. To see more features, please{" "}
+                            {localItems.length} photos only. To see more featured images, please{" "}
                             <Link href="https://www.instagram.com/yadu.krishna.k" target="_blank" rel="noopener noreferrer"
                                 className="hover:underline" style={{ color: "#e1306c" }}>Follow on Instagram</Link>
                         </motion.p>

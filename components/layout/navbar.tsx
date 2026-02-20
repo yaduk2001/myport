@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Code2 } from "lucide-react";
 
@@ -23,6 +24,9 @@ export const Navbar = () => {
     const [hidden, setHidden] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
     const [activeLink, setActiveLink] = useState("");
+
+    const pathname = usePathname();
+    const router = useRouter();
 
     useEffect(() => {
         let lastY = window.scrollY;
@@ -53,6 +57,10 @@ export const Navbar = () => {
 
     const scrollTo = (href: string) => {
         setMobileOpen(false);
+        if (pathname !== "/") {
+            router.push(`/${href}`);
+            return;
+        }
         const el = document.querySelector(href);
         if (el) el.scrollIntoView({ behavior: "smooth" });
     };
