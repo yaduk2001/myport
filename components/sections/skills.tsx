@@ -6,18 +6,18 @@ import { fadeUp, fadeLeft, fadeRight, springPop, staggerContainer, viewport } fr
 
 const skills = [
     {
-        category: "Frontend Architecture",
+        category: "Frontend & Mobile",
         icon: MonitorSmartphone,
         accent: "#6366f1",
         bgAccent: "rgba(99,102,241,0.08)",
-        items: ["Advanced React Patterns", "Next.js App Router & SSR", "Component-Driven UI/UX", "TailwindCSS Customization", "Modern Glassmorphism", "Framer Motion Animations", "High-Performance Rendering", "Accessibility Standards (WCAG)", "Progressive Web Apps (PWA)"]
+        items: ["React.js", "Next.js App Router", "Angular", "Vue.js", "Flutter", "Dart", "React Native", "Swift & Kotlin", "Ionic & Capacitor", "TailwindCSS & SASS", "TypeScript", "Framer Motion", "Progressive Web Apps (PWA)", "Redux & Zustand", "React Query", "HTML5 & CSS3", "WebGL & Three.js", "Web Accessibility (WCAG)"]
     },
     {
-        category: "Backend Systems",
+        category: "Backend & Full Stack",
         icon: Server,
         accent: "#f43f5e",
         bgAccent: "rgba(244,63,94,0.08)",
-        items: ["Scalable Node.js Services", "RESTful & GraphQL APIs", "Robust Security & OAuth 2.0", "Cloud Infrastructure (AWS)", "Data Modeling (SQL/NoSQL)", "Serverless Architecture", "CI/CD Workflows", "API Rate Limiting", "Real-time WebSockets"]
+        items: ["Node.js & Express", "Python (Django/FastAPI)", "RESTful & GraphQL APIs", "Firebase & Supabase", "PostgreSQL & MySQL", "MongoDB & NoSQL", "AWS & Cloud Infrastructure", "Docker & Kubernetes", "CI/CD Workflows", "OAuth 2.0 & Web Security", "Serverless Architecture", "Real-time WebSockets"]
     },
     {
         category: "Artificial Intelligence",

@@ -7,12 +7,11 @@ import { AnimatedCounter } from "@/components/ui/animated-counter";
 import { fadeUp, fadeRight, fadeLeft, scaleUp, springPop, staggerContainer, viewport } from "@/lib/animations";
 
 const techBadges = [
-    { label: "React", color: "#61dafb", bg: "#e8f9fe" },
-    { label: "Next.js", color: "#4338ca", bg: "#eef0ff" },
-    { label: "Python", color: "#3776ab", bg: "#eef4fb" },
-    { label: "TensorFlow", color: "#ff6f00", bg: "#fff5e6" },
+    { label: "React & Next.js", color: "#61dafb", bg: "#e8f9fe" },
+    { label: "Full-Stack", color: "#4338ca", bg: "#eef0ff" },
+    { label: "Python & AI", color: "#3776ab", bg: "#eef4fb" },
+    { label: "Flutter", color: "#02569B", bg: "#e1f3fd" },
     { label: "Node.js", color: "#339933", bg: "#edf7ee" },
-    { label: "Firebase", color: "#ffa000", bg: "#fff8e8" },
 ];
 
 const floatingCards = [
