@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, MapPin, Send, MessageCircle, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
+import { Send, Mail, MapPin, MessageCircle, CheckCircle2, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
 import { fadeUp, fadeLeft, fadeRight, viewport } from "@/lib/animations";
+import { Icon3D } from "@/components/ui/icon-3d";
 
 type Status = "idle" | "sending" | "success" | "error";
 
@@ -79,10 +80,7 @@ export const Contact = () => {
                             style={{ textDecoration: "none" }}
                             whileHover={{ y: -4, transition: { duration: 0.25 } }}
                         >
-                            <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"
-                                style={{ background: "rgba(99,102,241,0.1)" }}>
-                                <Mail className="w-5 h-5" style={{ color: "#6366f1" }} />
-                            </div>
+                            <Icon3D icon={Mail} color="#6366f1" size={44} className="group-hover:scale-110 transition-transform duration-300 pointer-events-none" />
                             <div>
                                 <p className="text-xs font-bold uppercase tracking-widest mb-0.5" style={{ color: "var(--fg-subtle)" }}>Email</p>
                                 <p className="text-sm font-semibold group-hover:text-blue-500 transition-colors" style={{ color: "var(--fg)" }}>
@@ -93,10 +91,7 @@ export const Contact = () => {
 
                         {/* Location */}
                         <motion.div className="card p-5 flex items-center gap-4 group" whileHover={{ y: -4, transition: { duration: 0.25 } }}>
-                            <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"
-                                style={{ background: "rgba(244,63,94,0.1)" }}>
-                                <MapPin className="w-5 h-5" style={{ color: "#f43f5e" }} />
-                            </div>
+                            <Icon3D icon={MapPin} color="#f43f5e" size={44} className="group-hover:scale-110 transition-transform duration-300 pointer-events-none" />
                             <div>
                                 <p className="text-xs font-bold uppercase tracking-widest mb-0.5" style={{ color: "var(--fg-subtle)" }}>Location</p>
                                 <p className="text-sm font-semibold" style={{ color: "var(--fg)" }}>Available Worldwide (Remote)</p>

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { BadgeCheck, Award } from "lucide-react";
 import { fadeUp, springPop, staggerContainer, viewport } from "@/lib/animations";
+import { Icon3D } from "@/components/ui/icon-3d";
 
 // Google favicon service — always works, no auth needed
 const FAV = (domain: string) => `https://www.google.com/s2/favicons?domain=${domain}&sz=64`;
@@ -115,14 +116,7 @@ export const Certifications = () => {
                                                 />
                                             </motion.div>
                                         ) : (
-                                            <motion.div
-                                                className="w-9 h-9 rounded-xl flex items-center justify-center"
-                                                style={{ background: clr.bg }}
-                                                whileHover={{ rotate: [-8, 8, 0], scale: 1.2 } as any}
-                                                transition={{ duration: 0.4 }}
-                                            >
-                                                <BadgeCheck className="w-4 h-4" style={{ color: clr.color }} />
-                                            </motion.div>
+                                            <Icon3D icon={BadgeCheck} color={clr.color} size={36} className="pointer-events-none" />
                                         )}
                                         <span
                                             className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full"

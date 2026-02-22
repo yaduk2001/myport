@@ -45,17 +45,18 @@ export const Education = () => {
                     </h2>
                 </motion.div>
 
-                <div className="max-w-3xl mx-auto space-y-6">
+                <div className="flex flex-row overflow-x-auto gap-6 pb-12 snap-x max-w-6xl mx-auto disable-scrollbar">
                     {educationDetails.map((edu, i) => (
                         <motion.div
                             key={i}
+                            className="snap-start flex-shrink-0 w-full md:w-[560px]"
                             variants={cardVariants[i]}
                             initial="hidden"
                             whileInView="visible"
                             viewport={viewport}
                             whileHover={{ y: -6, transition: { duration: 0.3 } }}
                         >
-                            <div className="card p-7 group relative overflow-hidden gradient-border spotlight">
+                            <div className="card h-full p-7 group relative overflow-hidden gradient-border spotlight flex flex-col">
                                 {/* Top accent bar — animated reveal */}
                                 <motion.div
                                     className="absolute top-0 left-0 right-0 h-[3px] rounded-t-[var(--card-radius)]"
@@ -66,7 +67,7 @@ export const Education = () => {
                                     transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                                 />
 
-                                <div className="flex flex-col md:flex-row md:items-start gap-5 pt-2">
+                                <div className="flex flex-col md:flex-row md:items-start gap-5 pt-2 flex-1">
                                     <motion.div
                                         className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
                                         style={{ background: edu.colorBg }}
@@ -76,7 +77,7 @@ export const Education = () => {
                                         <BookOpen className="w-5 h-5" style={{ color: edu.color }} />
                                     </motion.div>
 
-                                    <div className="flex-1 min-w-0">
+                                    <div className="flex-1 flex flex-col h-full min-w-0">
                                         <div className="flex flex-col md:flex-row md:items-start justify-between gap-3 mb-3">
                                             <div>
                                                 <h3 className="font-display font-bold text-xl leading-tight" style={{ color: "var(--fg)" }}>
@@ -100,7 +101,7 @@ export const Education = () => {
                                         )}
 
                                         <motion.div
-                                            className="flex flex-wrap gap-2 pt-4 border-t"
+                                            className="flex flex-wrap gap-2 pt-4 mt-auto border-t"
                                             style={{ borderColor: "var(--border)" }}
                                             variants={staggerContainer(0.06, 0.2)}
                                             initial="hidden"

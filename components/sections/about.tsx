@@ -1,19 +1,27 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Code2, Cpu, GraduationCap, Trophy, Sparkles, ArrowUpRight } from "lucide-react";
+import { useState } from "react";
+import { motion, Reorder } from "framer-motion";
+import { Code2, Cpu, GraduationCap, Trophy, Sparkles, ArrowUpRight, PenTool, Rocket, Smartphone, Database, Activity, Palette } from "lucide-react";
 import { fadeUp, fadeLeft, fadeRight, springPop, staggerContainer, flipX, viewport } from "@/lib/animations";
+import { Icon3D } from "@/components/ui/icon-3d";
 
 const highlights = [
     { icon: Code2, label: "Full-Stack Dev", desc: "React · Next.js · Node.js", color: "#6366f1", bg: "#f0f0ff" },
     { icon: Cpu, label: "AI / ML Engineer", desc: "TensorFlow · PyTorch · GenAI", color: "#f43f5e", bg: "#fff0f3" },
     { icon: GraduationCap, label: "MCA Graduate", desc: "Amal Jyothi College · 2025", color: "#f59e0b", bg: "#fffbeb" },
     { icon: Trophy, label: "50+ Certifications", desc: "Google · Infosys · WIPO", color: "#10b981", bg: "#ecfdf5" },
+    { icon: PenTool, label: "Creative Writer", desc: "Amazon Kindle Author", color: "#8b5cf6", bg: "#f3e8ff" },
+    { icon: Smartphone, label: "App Developer", desc: "Flutter · Dart", color: "#14b8a6", bg: "#ccfbf1" },
+    { icon: Activity, label: "Open Source", desc: "Active Contributor", color: "#ec4899", bg: "#fce7f3" },
+    { icon: Palette, label: "UI Enthusiast", desc: "Framer Motion", color: "#d946ef", bg: "#fae8ff" },
 ];
 
 const focusAreas = ["Scalable Web Applications", "AI/ML Integrations", "CI/CD & Automations", "Spatial User Interfaces"];
 
 export const About = () => {
+    const [items, setItems] = useState(highlights);
+
     return (
         <section id="about" className="py-28 relative" style={{ background: "var(--section-alt)" }}>
             <div className="absolute inset-0 grid-pattern opacity-40 pointer-events-none" />
@@ -51,14 +59,17 @@ export const About = () => {
                         >
                             <div className="divider mb-6" />
                             <h3 className="font-display font-bold text-2xl mb-4" style={{ color: "var(--fg)" }}>
-                                Engineering Intelligent Digital Ecosystems
+                                Where Logic Meets Imagination
                             </h3>
                             <div className="space-y-4 text-base leading-relaxed" style={{ color: "var(--fg-muted)" }}>
                                 <p>
-                                    I am a <strong style={{ color: "var(--fg)", fontWeight: 600 }}>Results-driven MCA Graduate</strong> with proven expertise in full-stack development, automation, and AI-powered systems.
+                                    Beyond the screen, I am a <strong style={{ color: "var(--fg)", fontWeight: 600 }}>dedicated novelist and world-builder</strong> at heart. While I am a results-driven MCA Graduate specializing in full-stack development, artificial intelligence, and scalable systems, my approach to engineering is entirely driven by storytelling. I view every software project not as a rigid set of technical requirements, but as a living narrative—a vast, dynamic universe built from pure logic, optimized for epic user journeys, and designed to leave a lasting emotional impact.
                                 </p>
                                 <p>
-                                    My passion lies in building scalable, intelligent, and user-centric digital solutions. I don't just write code; I engineer solutions that solve real-world problems and deliver exceptional user experiences.
+                                    My deep obsession with crafting fictional realms and cutting-edge technology allows me to tackle complex problems like plotting a thriller. Constructing a robust digital ecosystem is exactly like writing a captivating book: just as a gripping story demands brilliant pacing, complex characters, and a flawless plot, an exceptional application requires elegant architecture, seamless user interactions, and visionary scalability.
+                                </p>
+                                <p>
+                                    Whether I am training advanced AI models, deploying lightning-fast web applications, or writing the next explosive chapter of an action-packed book series, I bring the exact same relentless imagination, narrative discipline, and meticulous attention to detail to every world I create.
                                 </p>
                             </div>
 
@@ -101,35 +112,47 @@ export const About = () => {
                     </motion.div>
 
                     {/* Right — Highlights */}
-                    <motion.div
-                        className="lg:col-span-2 grid grid-cols-2 lg:grid-cols-1 gap-4"
+                    <Reorder.Group
+                        axis="y"
+                        values={items}
+                        onReorder={setItems}
+                        className="lg:col-span-2 flex flex-col justify-start h-full gap-4 py-1 list-none m-0 p-0"
                         variants={staggerContainer(0.1, 0.2)}
                         initial="hidden"
                         whileInView="visible"
                         viewport={viewport}
                     >
-                        {highlights.map((h, i) => (
-                            <motion.div
-                                key={i}
+                        {items.map((h, i) => (
+                            <Reorder.Item
+                                key={h.label}
+                                value={h}
                                 variants={flipX}
-                                className="card p-5 flex items-center gap-4 group gradient-border spotlight"
-                                whileHover={{ y: -5, x: 3, transition: { duration: 0.3 } }}
+                                className="w-full cursor-grab active:cursor-grabbing relative z-20"
                             >
                                 <motion.div
-                                    className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
-                                    style={{ background: h.bg }}
-                                    whileHover={{ rotate: [-8, 8, -4, 0], scale: 1.2 } as any}
-                                    transition={{ duration: 0.45 }}
+                                    animate={{ y: [0, -6, 0] }}
+                                    transition={{
+                                        duration: 3 + (i % 2),
+                                        repeat: Infinity,
+                                        ease: "easeInOut",
+                                        delay: i * 0.2
+                                    }}
+                                    className="h-full"
                                 >
-                                    <h.icon className="w-5 h-5" style={{ color: h.color }} />
+                                    <motion.div
+                                        className="card p-4 px-5 flex items-center gap-4 group gradient-border spotlight w-full h-full"
+                                        whileHover={{ scale: 1.02, x: 4, transition: { duration: 0.3 } }}
+                                    >
+                                        <Icon3D icon={h.icon} color={h.color} size={48} />
+                                        <div>
+                                            <p className="font-semibold text-sm" style={{ color: "var(--fg)" }}>{h.label}</p>
+                                            <p className="text-xs mt-0.5" style={{ color: "var(--fg-subtle)" }}>{h.desc}</p>
+                                        </div>
+                                    </motion.div>
                                 </motion.div>
-                                <div>
-                                    <p className="font-semibold text-sm" style={{ color: "var(--fg)" }}>{h.label}</p>
-                                    <p className="text-xs mt-0.5" style={{ color: "var(--fg-subtle)" }}>{h.desc}</p>
-                                </div>
-                            </motion.div>
+                            </Reorder.Item>
                         ))}
-                    </motion.div>
+                    </Reorder.Group>
                 </div>
             </div>
         </section>

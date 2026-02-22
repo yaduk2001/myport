@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Github, Linkedin, Mail, Sparkles, Code2, Brain, Rocket } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, Sparkles, Code2, Brain, Rocket, PenTool } from "lucide-react";
 import { ParticleField } from "@/components/ui/particle-field";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
 import { fadeUp, fadeRight, fadeLeft, scaleUp, springPop, staggerContainer, viewport } from "@/lib/animations";
+import { Icon3D } from "@/components/ui/icon-3d";
 
 const techBadges = [
     { label: "React & Next.js", color: "#61dafb", bg: "#e8f9fe" },
@@ -18,6 +19,7 @@ const floatingCards = [
     { icon: Code2, label: "Full-Stack Dev", color: "#6366f1", bg: "#f0f0ff", x: "-left-4 md:-left-10", y: "top-[18%]", delay: 0 },
     { icon: Brain, label: "AI / ML Expert", color: "#f43f5e", bg: "#fff0f3", x: "-right-4 md:-right-10", y: "top-[38%]", delay: 1.5 },
     { icon: Rocket, label: "Product Builder", color: "#f59e0b", bg: "#fffbeb", x: "-left-4 md:-left-10", y: "bottom-[18%]", delay: 0.8 },
+    { icon: PenTool, label: "Story Writer", color: "#10b981", bg: "#ecfdf5", x: "-right-4 md:-right-10", y: "bottom-[5%]", delay: 2.1 },
 ];
 
 export const Hero = () => {
@@ -63,7 +65,7 @@ export const Hero = () => {
 
                         {/* Role label */}
                         <motion.p variants={fadeUp} className="text-sm font-bold uppercase tracking-widest mb-3" style={{ color: "var(--fg-subtle)" }}>
-                            Full-Stack · AI/ML · Product
+                            Full-Stack · AI/ML · Product · Story Writer
                         </motion.p>
 
                         {/* Headline */}
@@ -71,8 +73,8 @@ export const Hero = () => {
                             <h1 className="font-display font-extrabold leading-[1.04] mb-6">
                                 <span className="block text-5xl md:text-6xl lg:text-7xl" style={{ color: "var(--fg)" }}>Yadu Krishna</span>
                                 <span className="block text-5xl md:text-6xl lg:text-7xl" style={{ color: "var(--fg)" }}>KS</span>
-                                <span className="block text-4xl md:text-5xl lg:text-6xl mt-2 text-shimmer">MCA Graduate &amp;</span>
-                                <span className="block text-4xl md:text-5xl lg:text-6xl text-shimmer">Developer</span>
+                                <span className="block text-4xl md:text-5xl lg:text-6xl mt-2 text-shimmer">MCA Graduate, Developer</span>
+                                <span className="block text-2xl md:text-3xl lg:text-4xl text-shimmer">&amp; Story Writer</span>
                             </h1>
                         </motion.div>
 
@@ -194,7 +196,7 @@ export const Hero = () => {
                                     </motion.div>
                                     <div>
                                         <div className="font-display font-bold text-lg" style={{ color: "var(--fg)" }}>Yadu Krishna KS</div>
-                                        <div className="text-sm font-medium" style={{ color: "var(--fg-muted)" }}>Full-Stack &amp; AI/ML Dev</div>
+                                        <div className="text-sm font-medium" style={{ color: "var(--fg-muted)" }}>Full-Stack, AI/ML Dev & Story Writer</div>
                                     </div>
                                 </div>
 
@@ -253,14 +255,7 @@ export const Hero = () => {
                                     style={{ border: "1px solid var(--border)", minWidth: 160 }}
                                     whileHover={{ scale: 1.08, x: i % 2 === 0 ? -4 : 4 } as any}
                                 >
-                                    <motion.div
-                                        className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-                                        style={{ background: fc.bg }}
-                                        whileHover={{ rotate: [0, -15, 15, 0], scale: 1.2 } as any}
-                                        transition={{ duration: 0.4 }}
-                                    >
-                                        <fc.icon className="w-4 h-4" style={{ color: fc.color }} />
-                                    </motion.div>
+                                    <Icon3D icon={fc.icon} color={fc.color} size={36} />
                                     <span className="text-sm font-semibold" style={{ color: "var(--fg)" }}>{fc.label}</span>
                                 </motion.div>
                             ))}

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Cpu, Server, MonitorSmartphone, ChevronRight } from "lucide-react";
 import { fadeUp, fadeLeft, fadeRight, springPop, staggerContainer, viewport } from "@/lib/animations";
+import { Icon3D } from "@/components/ui/icon-3d";
 
 const skills = [
     {
@@ -83,14 +84,7 @@ export const Skills = () => {
 
                                 {/* Header */}
                                 <div className="flex items-start gap-4 mb-7 pt-3">
-                                    <motion.div
-                                        className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                                        style={{ background: skill.bgAccent }}
-                                        whileHover={{ rotate: [-6, 6, -6, 0], scale: 1.15 } as any}
-                                        transition={{ duration: 0.45 }}
-                                    >
-                                        <skill.icon className="w-6 h-6" style={{ color: skill.accent }} />
-                                    </motion.div>
+                                    <Icon3D icon={skill.icon} color={skill.accent} size={48} />
                                     <div>
                                         <h3 className="font-display font-bold text-xl leading-tight" style={{ color: "var(--fg)" }}>
                                             {skill.category}

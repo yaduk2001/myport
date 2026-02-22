@@ -1,29 +1,45 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { BookOpen, PenTool } from "lucide-react";
-import { fadeUp, fadeLeft, fadeRight, viewport } from "@/lib/animations";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { BookOpen, PenTool, ExternalLink, X } from "lucide-react";
+import { fadeUp, viewport } from "@/lib/animations";
+import { Icon3D } from "@/components/ui/icon-3d";
 
 const books = [
     {
-        title: "Navigating AI Frontiers: The Comprehensive Guide to Prompt Engineering for Professionals",
-        platform: "WIPO – Creative Brief",
-        description: "A comprehensive professional guide on mastering prompt engineering techniques for AI systems, covering theory, real-world use-cases, and frameworks for professionals working with generative AI.",
-        year: "2024", accent: "#6366f1", accentBg: "rgba(99,102,241,0.08)"
-    },
-    {
-        title: "Artificial Intelligence – Multiple Choice Questions (MCQs) — Career Readiness Preparation",
-        platform: "WIPO – Creative Brief",
-        description: "A curated collection of MCQs covering major AI domains including machine learning, deep learning, NLP, computer vision, and ethics. Targeted at students and professionals preparing for AI roles.",
-        year: "2024", accent: "#f43f5e", accentBg: "rgba(244,63,94,0.08)"
+        id: "truth-seeker",
+        title: "The Truth Seeker",
+        platform: "Amazon Kindle",
+        brief: "A gripping five-part action-thriller series that plunges deep into a world of hidden truths, dangerous secrets, and relentless pursuit.",
+        description: `The Truth Seeker is a gripping five-part action-thriller series that plunges deep into a world of hidden truths, dangerous secrets, and relentless pursuit. The series follows a protagonist who isn’t just searching for answers — he's uncovering the very fabric of reality, where every discovery brings him closer to an ancient mystery that could change everything.
+
+At the heart of The Truth Seeker lies a young man, driven by an unshakable sense of justice and a thirst for knowledge. This isn’t just about solving crimes or uncovering wrongdoings. It’s about unraveling the complex web of deceit, power, and manipulation that stretches back centuries. Each story in the series presents new layers of danger, intrigue, and unexpected twists, keeping the readers on the edge of their seats.
+
+The books blend crime, mystery, and thriller elements with ancient findings, cryptic symbols, and chilling discoveries that hint at something much larger than the present-day battles. With every turn, the protagonist confronts foes both human and supernatural, finding himself entangled in a conspiracy that crosses generations, with every answer only leading to more questions.`,
+        year: "2024",
+        accent: "#f59e0b",
+        accentBg: "rgba(245,158,11,0.08)",
+        link: "https://www.amazon.in/Truth-Seeker-Whispers-Shadows-Awakening-ebook/dp/B0F66FS123?dplnkId=b11d7224-4334-4c61-a915-88cc4d6a68c9"
     }
 ];
 
-const cardVariants = [fadeLeft, fadeRight];
-
 export const Publications = () => {
+    const [selectedBook, setSelectedBook] = useState<typeof books[0] | null>(null);
+
+    // Prevent body scroll when modal is open
+    useEffect(() => {
+        if (selectedBook) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => { document.body.style.overflow = 'unset'; };
+    }, [selectedBook]);
+
     return (
-        <section id="publications" className="py-28 relative" style={{ background: "var(--section-alt)" }}>
+        <section id="publications" className="py-28 relative" style={{ background: "var(--bg)" }}>
+            <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "var(--border)" }} />
             <div className="container mx-auto px-6">
                 <motion.div
                     variants={fadeUp}
@@ -40,59 +56,120 @@ export const Publications = () => {
                         Publications
                     </h2>
                     <p className="max-w-md mx-auto" style={{ color: "var(--fg-muted)" }}>
-                        Written resources for the AI community — available on WIPO Creative Brief.
+                        Exploring mysteries, thrillers, and deep dives into the unknown.
                     </p>
                 </motion.div>
 
-                <div className="max-w-4xl mx-auto space-y-6">
-                    {books.map((book, i) => (
+                <div className="flex flex-row overflow-x-auto gap-6 pb-12 snap-x max-w-6xl mx-auto disable-scrollbar">
+                    {books.map((book) => (
                         <motion.div
-                            key={i}
-                            variants={cardVariants[i]}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={viewport}
+                            key={book.id}
+                            className="snap-start flex-shrink-0 w-full md:w-[420px] cursor-pointer"
                             whileHover={{ y: -6, transition: { duration: 0.3 } }}
+                            onClick={() => setSelectedBook(book)}
+                            layoutId={`layout-card-${book.id}`}
                         >
-                            <div className="card p-7 group relative overflow-hidden gradient-border spotlight">
+                            <div className="card h-full p-8 group relative overflow-hidden gradient-border spotlight flex flex-col justify-between" style={{ minHeight: "300px" }}>
                                 <motion.div
                                     className="absolute top-0 left-0 right-0 h-[3px] rounded-t-[var(--card-radius)]"
                                     style={{ background: book.accent }}
-                                    initial={{ scaleX: 0, transformOrigin: "left" }}
-                                    whileInView={{ scaleX: 1 }}
-                                    viewport={viewport}
-                                    transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                                 />
 
-                                <div className="flex flex-col md:flex-row gap-5 pt-2">
-                                    <motion.div
-                                        className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                                        style={{ background: book.accentBg }}
-                                        whileHover={{ rotate: [-8, 8, -4, 0], scale: 1.2 } as any}
-                                        transition={{ duration: 0.45 }}
-                                    >
-                                        <BookOpen className="w-5 h-5" style={{ color: book.accent }} />
-                                    </motion.div>
+                                <div>
+                                    <Icon3D icon={BookOpen} color={book.accent} size={48} className="mb-6 pointer-events-none" />
 
-                                    <div className="flex-1 min-w-0">
-                                        <div className="flex flex-wrap items-center gap-2 mb-3">
-                                            <span className="text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ background: book.accentBg, color: book.accent }}>
-                                                {book.platform}
-                                            </span>
-                                            <span className="text-xs font-semibold" style={{ color: "var(--fg-subtle)" }}>{book.year}</span>
-                                        </div>
-                                        <h3 className="font-display font-bold text-xl leading-snug mb-3 group-hover:text-brand-500 transition-colors" style={{ color: "var(--fg)" }}>
-                                            {book.title}
-                                        </h3>
-                                        <p className="text-sm leading-relaxed" style={{ color: "var(--fg-muted)" }}>
-                                            {book.description}
-                                        </p>
+                                    <div className="flex flex-wrap items-center gap-2 mb-4">
+                                        <span className="text-[11px] font-bold uppercase tracking-widest px-3 py-1 rounded-full" style={{ background: book.accentBg, color: book.accent }}>
+                                            {book.platform}
+                                        </span>
                                     </div>
+
+                                    <h3 className="font-display font-bold text-2xl leading-snug mb-3 group-hover:text-brand-500 transition-colors" style={{ color: "var(--fg)" }}>
+                                        {book.title}
+                                    </h3>
+                                    <p className="text-sm leading-relaxed line-clamp-3 mb-6" style={{ color: "var(--fg-muted)" }}>
+                                        {book.brief}
+                                    </p>
+                                </div>
+
+                                <div className="mt-auto flex items-center justify-between">
+                                    <span className="text-sm font-semibold flex items-center group-hover:text-brand-500 transition-colors" style={{ color: "var(--fg)" }}>
+                                        View details <ExternalLink className="w-4 h-4 ml-1 opacity-50 group-hover:translate-x-1 group-hover:opacity-100 transition-all" />
+                                    </span>
+
+                                    <a
+                                        href={book.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        onClick={(e) => e.stopPropagation()}
+                                        className="text-xs font-bold px-4 py-2 rounded-lg transition-colors border"
+                                        style={{ background: "var(--bg-muted)", color: "var(--fg)", borderColor: "var(--border)" }}
+                                    >
+                                        View publication
+                                    </a>
                                 </div>
                             </div>
                         </motion.div>
                     ))}
                 </div>
+
+                <AnimatePresence>
+                    {selectedBook && (
+                        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+                            <motion.div
+                                className="absolute inset-0"
+                                style={{ background: "rgba(0,0,0,0.6)", backdropFilter: "blur(6px)" }}
+                                onClick={() => setSelectedBook(null)}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.3 }}
+                            />
+
+                            <motion.div
+                                layoutId={`layout-card-${selectedBook.id}`}
+                                className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl p-8 sm:p-12 shadow-2xl z-10 custom-scrollbar"
+                                style={{ background: "var(--card-bg)", border: "1px solid var(--border)" }}
+                            >
+                                <button
+                                    onClick={() => setSelectedBook(null)}
+                                    className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2.5 rounded-full hover:bg-[var(--bg-muted)] transition-colors z-20 group"
+                                >
+                                    <X className="w-5 h-5 group-hover:scale-110 transition-transform" style={{ color: "var(--fg-muted)" }} />
+                                </button>
+
+                                <div className="flex items-center gap-3 mb-6 relative z-10">
+                                    <span className="text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full inline-block" style={{ background: selectedBook.accentBg, color: selectedBook.accent }}>
+                                        {selectedBook.platform}
+                                    </span>
+                                    <span className="text-sm font-semibold" style={{ color: "var(--fg-subtle)" }}>{selectedBook.year}</span>
+                                </div>
+
+                                <h3 className="font-display font-bold text-3xl sm:text-4xl leading-tight mb-8 relative z-10" style={{ color: "var(--fg)" }}>
+                                    {selectedBook.title}
+                                </h3>
+
+                                <div className="space-y-5 mb-10 relative z-10">
+                                    {selectedBook.description.split('\n\n').map((paragraph, i) => (
+                                        <p key={i} className="leading-relaxed text-[15px] sm:text-base" style={{ color: "var(--fg-muted)" }}>{paragraph}</p>
+                                    ))}
+                                </div>
+
+                                <motion.a
+                                    href={selectedBook.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="btn-outline inline-flex relative z-10"
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                >
+                                    View Publication
+                                    <ExternalLink className="w-4 h-4 ml-2" />
+                                </motion.a>
+                            </motion.div>
+                        </div>
+                    )}
+                </AnimatePresence>
             </div>
         </section>
     );
