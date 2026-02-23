@@ -45,7 +45,7 @@ export const Education = () => {
                     </h2>
                 </motion.div>
 
-                <div className="flex flex-row overflow-x-auto gap-6 pb-12 snap-x max-w-6xl mx-auto disable-scrollbar">
+                <div className="flex flex-col md:flex-row md:overflow-x-auto gap-6 pb-12 snap-y md:snap-x max-w-6xl mx-auto disable-scrollbar">
                     {educationDetails.map((edu, i) => (
                         <motion.div
                             key={i}

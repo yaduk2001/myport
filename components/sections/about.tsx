@@ -127,7 +127,7 @@ export const About = () => {
                                 key={h.label}
                                 value={h}
                                 variants={flipX}
-                                className="w-full cursor-grab active:cursor-grabbing relative z-20"
+                                className="w-[85%] mx-auto lg:w-full cursor-grab active:cursor-grabbing relative z-20"
                             >
                                 <motion.div
                                     animate={{ y: [0, -6, 0] }}
