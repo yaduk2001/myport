@@ -233,5 +233,26 @@
         ],
         "monthsWorked": "Recent",
         "featured": true
+    },
+    {
+        "id": "deutschmaster",
+        "name": "DeutschMaster — Hybrid German Language Learning Platform",
+        "category": "web",
+        "description": "A full-featured, hybrid German language learning marketplace connecting students with teachers. Supports real-time classes, pre-recorded modules, AI-powered assistants, and a complete administrative backend.",
+        "longDescription": "DeutschMaster is a full-featured, hybrid German language learning marketplace and platform. It serves as an educational ecosystem connecting students with teachers. The platform supports a variety of learning formats including live real-time classes, pre-recorded modules, and hybrid courses. Beyond standard course delivery, it integrates AI-powered assistants to help both students (conversational practice) and teachers (lesson planning), and features a complete administrative backend to manage approvals, users, and financials.\n\nCore Platform Features:\n• Authentication & Authorization: Secure JWT-based login with strict Role-Based Access Control (RBAC).\n• Course Engine: Full CRUD capabilities for courses. Supports associating external video URLs.\n• Real-Time Live Classes: Custom WebRTC + Socket.io implementation allowing low-latency video and audio classes directly on the platform.\n• Payment Processing: Dual payment flows—Stripe Checkout for securely handling student course purchases, and an internal ledger system to track platform commissions and manage teacher payouts.\n• Interactive AI Assistants: Custom AI chatbots integrated via Google Gemini to assist users based on their roles.\n\nUser Roles:\n• Student Functions: Learning Hub dashboard, One-click live class attendance, Linguabuddy (AI Chat), Gamification & Stats.\n• Teacher Functions: Structured onboarding, Tiered course management, Classroom management, Financial tracking, Teachmate (AI Assistant).\n• Admin Functions: Platform stats, Approval workflows (teachers & courses), User management, Financial oversight.\n\nTechnology Stack:\n• Frontend: Next.js (v16), React (v19), Tailwind CSS (v4), Framer Motion\n• Backend: Node.js, Express (v5), MongoDB (Mongoose)\n• Real-time Communications: Socket.io, WebRTC\n• Payments: Stripe, Razorpay\n• AI Integration: Google Generative AI (Gemini)",
+        "techStack": [
+            "Next.js 16",
+            "React 19",
+            "Tailwind CSS",
+            "Node.js",
+            "Express",
+            "MongoDB",
+            "Socket.io",
+            "WebRTC",
+            "Stripe",
+            "Google Gemini"
+        ],
+        "monthsWorked": "2026",
+        "featured": true
     }
 ]

@@ -30,6 +30,8 @@ const certifications = [
     { name: "CS403: Introduction to Modern Database Systems", issuer: "Saylor Academy", category: "Dev", logo: FAV("saylor.org") },
     { name: "Time Management", issuer: "Infosys Springboard", category: "Dev", logo: INFY_LOGO },
     { name: "50 Canva", issuer: "Canva", category: "Dev", logo: FAV("canva.com") },
+    { name: "Google Play Store Listing Certification", issuer: "Google Play Academy", category: "Dev", logo: FAV("google.com") },
+    { name: "Google Play Console Certification", issuer: "Google Play Academy", category: "Dev", logo: FAV("google.com") },
     // Cloud / Infra
     { name: "Google Cloud Technical Series OnBoard Edition Jan 2026", issuer: "Google", category: "Cloud", logo: FAV("google.com") },
     { name: "Google Cloud Technical Series", issuer: "Google", category: "Cloud", logo: FAV("google.com") },
