@@ -30,7 +30,7 @@ const experiences = [
         skills: ["Quality Assurance", "Resource Allocation", "App Development", "Hardware Integration", "Flutter"]
     },
     {
-        title: "Project Manager",
+        title: "Software Developer",
         company: "C2B Software Solutions",
         location: "Ernakulam, Kerala",
         period: "Dec 2021 - Mar 2022",
@@ -39,9 +39,9 @@ const experiences = [
     },
     {
         title: "Gen AI Intern",
-        company: "Confidential",
-        location: "",
-        period: "Recent",
+        company: "Startup",
+        location: "Kochi, Kerala",
+        period: "2025",
         description: "Assisted in researching, fine-tuning, and deploying generative AI models. Focused on prompt engineering and building scalable AI-driven solutions.",
         skills: ["Generative AI", "LLMs", "Prompt Engineering", "Python", "Model Fine-tuning"]
     },
