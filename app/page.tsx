@@ -16,14 +16,19 @@ async function getGithubStats() {
     const token = process.env.GITHUB_TOKEN;
     const headers: Record<string, string> = {
       "Accept": "application/vnd.github+json",
+      "User-Agent": "Portfolio-App",
       ...(token ? { "Authorization": `Bearer ${token}` } : {}),
     };
 
     const userRes = await fetch('https://api.github.com/users/yaduk2001', {
       headers,
-      next: { revalidate: 3600 }
+      next: { revalidate: 60 }
     });
-    if (!userRes.ok) throw new Error('Failed to fetch user data');
+    if (!userRes.ok) {
+      const errorText = await userRes.text();
+      console.error('GitHub API user fetch failed:', userRes.status, errorText);
+      throw new Error('Failed to fetch user data');
+    }
     const userData = await userRes.json();
 
     // When authenticated, GitHub also returns total_private_repos
@@ -33,12 +38,15 @@ async function getGithubStats() {
 
     const reposRes = await fetch('https://api.github.com/users/yaduk2001/repos?per_page=100', {
       headers,
-      next: { revalidate: 3600 }
+      next: { revalidate: 60 }
     });
     let totalStars = 0;
     if (reposRes.ok) {
       const reposData = await reposRes.json();
       totalStars = reposData.reduce((acc: number, repo: any) => acc + repo.stargazers_count, 0);
+    } else {
+      const errorText = await reposRes.text();
+      console.error('GitHub API repos fetch failed:', reposRes.status, errorText);
     }
 
     return {
