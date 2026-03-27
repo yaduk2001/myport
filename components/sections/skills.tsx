@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Cpu, Server, MonitorSmartphone, ChevronRight } from "lucide-react";
+import { Cpu, Server, MonitorSmartphone, ChevronRight, Users2 } from "lucide-react";
 import { fadeUp, fadeLeft, fadeRight, springPop, staggerContainer, viewport } from "@/lib/animations";
 import { Icon3D } from "@/components/ui/icon-3d";
 
@@ -18,7 +18,7 @@ const skills = [
         icon: Server,
         accent: "#f43f5e",
         bgAccent: "rgba(244,63,94,0.08)",
-        items: ["Node.js & Express", "Python (Django/FastAPI)", "RESTful & GraphQL APIs", "Firebase & Supabase", "PostgreSQL & MySQL", "MongoDB & NoSQL", "AWS & Cloud Infrastructure", "Docker & Kubernetes", "CI/CD Workflows", "OAuth 2.0 & Web Security", "Serverless Architecture", "Real-time WebSockets"]
+        items: ["Java 8 & Spring Boot", "Microservices Architecture", "RESTful & GraphQL APIs", "Spring Data JPA", "Node.js & Express", "Python (Django/FastAPI)", "Firebase & Supabase", "PostgreSQL & MySQL", "MongoDB & NoSQL", "AWS & Cloud Infrastructure", "Docker & Kubernetes", "CI/CD Workflows", "OAuth 2.0 & Web Security", "Serverless Architecture", "Real-time WebSockets"]
     },
     {
         category: "Artificial Intelligence",
@@ -27,6 +27,34 @@ const skills = [
         bgAccent: "rgba(245,158,11,0.08)",
         items: ["Deep Learning & Neural Nets", "Computer Vision Engines", "Predictive Analytics", "Automated Decision Systems", "TensorFlow & PyTorch", "Natural Language Processing", "Data Extraction Pipelines", "Model Optimization", "AI-Driven Workflows"]
     }
+];
+
+const professionalSkills = [
+    "Advanced PowerPoint & Presentations",
+    "Microsoft Office Suite",
+    "Data-Driven Decision Making",
+    "Analytical & Logical Reasoning",
+    "Exceptional Time Management",
+    "Independent Task Ownership",
+    "Organizational Excellence",
+    "Bilingual Communication (English & Malayalam)",
+    "Verbal & Written Communication",
+    "Design & Graphics Sensibility",
+    "Adaptive Work Scheduling",
+    "Cross-functional Collaboration",
+    "Work Product Delivery",
+    "Professional Documentation",
+    "Stakeholder & Client Communication",
+    "Agile Methodology & SDLC",
+    "Clean Code & Software Craftsmanship",
+    "Object-Oriented Design (OOD)",
+    "Design Patterns",
+    "Unit Testing & TDD (JUnit)",
+    "Bug-Free Release Validation",
+    "Test Automation & Defect Reporting",
+    "API Design & Contracts",
+    "Data Pipeline & Data Modelling",
+    "Scrum & Team Ceremonies"
 ];
 
 const cardVariants = [fadeLeft, fadeUp, fadeRight];
@@ -117,6 +145,55 @@ export const Skills = () => {
                             </div>
                         </motion.div>
                     ))}
+                </motion.div>
+
+                {/* Professional Skills — full-width row */}
+                <motion.div
+                    className="max-w-6xl mx-auto mt-6"
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={viewport}
+                >
+                    <div className="card p-7 group overflow-hidden relative gradient-border spotlight">
+                        <motion.div
+                            className="absolute top-0 left-0 right-0 h-[3px] rounded-t-[var(--card-radius)]"
+                            style={{ background: "#10b981" }}
+                            initial={{ scaleX: 0, transformOrigin: "left" }}
+                            whileInView={{ scaleX: 1 }}
+                            viewport={viewport}
+                            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                        />
+                        <div className="flex items-start gap-4 mb-7 pt-3">
+                            <Icon3D icon={Users2} color="#10b981" size={48} />
+                            <div>
+                                <h3 className="font-display font-bold text-xl leading-tight" style={{ color: "var(--fg)" }}>
+                                    Professional Skills
+                                </h3>
+                                <p className="text-xs mt-1 font-semibold" style={{ color: "var(--fg-subtle)" }}>
+                                    {professionalSkills.length} competencies
+                                </p>
+                            </div>
+                        </div>
+                        <motion.div
+                            className="flex flex-wrap gap-2"
+                            variants={staggerContainer(0.04, 0.3)}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={viewport}
+                        >
+                            {professionalSkills.map((item, idx) => (
+                                <motion.span
+                                    key={idx}
+                                    variants={springPop}
+                                    className="tag cursor-default text-[12px]"
+                                    whileHover={{ scale: 1.1, y: -2 }}
+                                >
+                                    {item}
+                                </motion.span>
+                            ))}
+                        </motion.div>
+                    </div>
                 </motion.div>
             </div>
         </section>

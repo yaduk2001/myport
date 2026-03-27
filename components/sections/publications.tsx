@@ -21,6 +21,23 @@ The books blend crime, mystery, and thriller elements with ancient findings, cry
         accent: "#f59e0b",
         accentBg: "rgba(245,158,11,0.08)",
         link: "https://www.amazon.in/Truth-Seeker-Whispers-Shadows-Awakening-ebook/dp/B0F66FS123?dplnkId=b11d7224-4334-4c61-a915-88cc4d6a68c9"
+    },
+    {
+        id: "untitled-story",
+        title: "Untitled Story",
+        platform: "In Progress",
+        brief: "A destined romance thriller set in the mysterious land of Mrityupur — where two souls born at the same moment unknowingly converge at a prestigious university hiding dark secrets.",
+        description: `A destined romance thriller set in the mysterious land of Mrityupur — where two souls born at the same moment unknowingly converge at a prestigious university hiding dark secrets.
+
+Two lives, one cosmic moment. Born under the same stars, separated by fate, and drawn together by forces neither can explain. At the heart of this story lies Mrityupur — a land shrouded in legend, where ancient power runs beneath the surface of everyday life.
+
+When these two souls find themselves enrolled at the same prestigious university, they begin to sense a connection that defies logic. But the university harbors secrets far darker than romance — secrets buried in its walls, whispered in its corridors, and guarded by those in power.
+
+As their bond deepens, so does the danger. A story of star-crossed love, hidden truths, and the terrifying beauty of destiny unfolding.`,
+        year: "Coming Soon",
+        accent: "#8b5cf6",
+        accentBg: "rgba(139,92,246,0.08)",
+        link: ""
     }
 ];
 
@@ -97,16 +114,18 @@ export const Publications = () => {
                                         View details <ExternalLink className="w-4 h-4 ml-1 opacity-50 group-hover:translate-x-1 group-hover:opacity-100 transition-all" />
                                     </span>
 
-                                    <a
-                                        href={book.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        onClick={(e) => e.stopPropagation()}
-                                        className="text-xs font-bold px-4 py-2 rounded-lg transition-colors border"
-                                        style={{ background: "var(--bg-muted)", color: "var(--fg)", borderColor: "var(--border)" }}
-                                    >
-                                        View publication
-                                    </a>
+                                    {book.link && (
+                                        <a
+                                            href={book.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            onClick={(e) => e.stopPropagation()}
+                                            className="text-xs font-bold px-4 py-2 rounded-lg transition-colors border"
+                                            style={{ background: "var(--bg-muted)", color: "var(--fg)", borderColor: "var(--border)" }}
+                                        >
+                                            View publication
+                                        </a>
+                                    )}
                                 </div>
                             </div>
                         </motion.div>
@@ -155,17 +174,23 @@ export const Publications = () => {
                                     ))}
                                 </div>
 
-                                <motion.a
-                                    href={selectedBook.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="btn-outline inline-flex relative z-10"
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
-                                >
-                                    View Publication
-                                    <ExternalLink className="w-4 h-4 ml-2" />
-                                </motion.a>
+                                {selectedBook.link ? (
+                                    <motion.a
+                                        href={selectedBook.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="btn-outline inline-flex relative z-10"
+                                        whileHover={{ scale: 1.05 }}
+                                        whileTap={{ scale: 0.95 }}
+                                    >
+                                        View Publication
+                                        <ExternalLink className="w-4 h-4 ml-2" />
+                                    </motion.a>
+                                ) : (
+                                    <span className="inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-xl relative z-10" style={{ background: "rgba(139,92,246,0.12)", color: "#8b5cf6" }}>
+                                        ✍️ Work in Progress — Coming Soon
+                                    </span>
+                                )}
                             </motion.div>
                         </div>
                     )}

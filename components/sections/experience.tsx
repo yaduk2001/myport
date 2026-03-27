@@ -30,20 +30,12 @@ const experiences = [
         skills: ["Quality Assurance", "Resource Allocation", "App Development", "Hardware Integration", "Flutter"]
     },
     {
-        title: "Software Developer",
-        company: "C2B Software Solutions",
-        location: "Ernakulam, Kerala",
-        period: "Dec 2021 - Mar 2022",
-        description: "Managed software projects and client interactions. Full-time role leading cross-functional project delivery and maintaining client relationships.",
-        skills: ["Quality Assurance", "Resource Allocation", "Agile Methodology", "Client Communication"]
-    },
-    {
-        title: "Gen AI Intern",
-        company: "Startup",
+        title: "Gen AI Intern & Software Developer",
+        company: "Supe AI",
         location: "Kochi, Kerala",
         period: "2025",
-        description: "Assisted in researching, fine-tuning, and deploying generative AI models. Focused on prompt engineering and building scalable AI-driven solutions.",
-        skills: ["Generative AI", "LLMs", "Prompt Engineering", "Python", "Model Fine-tuning"]
+        description: "Assisted in researching, fine-tuning, and deploying generative AI models. Focused on prompt engineering, software development, and building scalable AI-driven solutions.",
+        skills: ["Generative AI", "Software Development", "LLMs", "Prompt Engineering", "Python", "Model Fine-tuning"]
     },
     {
         title: "Infosys Internship 5.0 (AI/ML Specialization)",
