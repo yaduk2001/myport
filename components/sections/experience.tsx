@@ -17,7 +17,7 @@ const experiences = [
         title: "Coordinator (Technical & Cultural Fest)",
         company: "Azure",
         location: "India",
-        period: "2024 - Present",
+        period: "2024",
         description: "Developed a comprehensive online platform for booking movie tickets, featuring user authentication, real-time seat selection, and payment integration.",
         skills: ["Quality Assurance", "Resource Allocation", "Project Management", "Team Leadership", "Event Planning"]
     },
@@ -25,7 +25,7 @@ const experiences = [
         title: "Computer Association Vice-President",
         company: "IHRD Technical Fest Representative (Inter College)",
         location: "Kerala, India",
-        period: "Dec 2023 - Present",
+        period: "2023",
         description: "Designed and implemented a home automation system using Flutter for the mobile interface and Arduino for controlling various home appliances.",
         skills: ["Quality Assurance", "Resource Allocation", "App Development", "Hardware Integration", "Flutter"]
     },
