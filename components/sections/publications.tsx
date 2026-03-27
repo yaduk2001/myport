@@ -77,11 +77,11 @@ export const Publications = () => {
                     </p>
                 </motion.div>
 
-                <div className="flex flex-row overflow-x-auto gap-6 pb-12 snap-x max-w-6xl mx-auto disable-scrollbar">
+                <div className="flex flex-col md:flex-row md:flex-wrap md:justify-center gap-6 pb-12 max-w-6xl mx-auto">
                     {books.map((book) => (
                         <motion.div
                             key={book.id}
-                            className="snap-start flex-shrink-0 w-full md:w-[420px] cursor-pointer"
+                            className="w-full md:w-[420px] cursor-pointer mx-auto md:mx-0"
                             whileHover={{ y: -6, transition: { duration: 0.3 } }}
                             onClick={() => setSelectedBook(book)}
                             layoutId={`layout-card-${book.id}`}
